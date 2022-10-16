@@ -37,6 +37,14 @@ export class Elems {
     return <HTMLButtonElement>this.targetDoc.getElementById("blueEllipse");
   }
 
+  get eyeArc(): HTMLButtonElement {
+    return <HTMLButtonElement>this.targetDoc.getElementById("eyeArc");
+  }
+
+  get eyeEllipse(): HTMLButtonElement {
+    return <HTMLButtonElement>this.targetDoc.getElementById("eyeEllipse");
+  }
+
   get size(): HTMLSelectElement {
     return <HTMLSelectElement>this.targetDoc.getElementById("size");
   }

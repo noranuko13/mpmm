@@ -29,6 +29,22 @@ export class Random {
   }
 
   /**
+   * めだま・めだーまミャクの白目の角度をランダムに取得する
+   * @returns 白目の角度 0, 45, 90 etc...
+   */
+  static get whiteAngle() {
+    return this.randomFromArray(Constants.WHITE_ANGLES);
+  }
+
+  /**
+   * めだま・めだーまミャクの虹彩の角度をランダムに取得する
+   * @returns 虹彩の角度 0, 30, 60 etc...
+   */
+  static get irisAngle() {
+    return this.randomFromArray(Constants.IRIS_ANGLES);
+  }
+
+  /**
    * 配列から唯一つの要素をランダムに取得する
    * @param items - 対象要素の配列
    * @returns うち一つの要素

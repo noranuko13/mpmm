@@ -5,6 +5,7 @@ import { Canvas } from "./sketch/canvas";
 import { Myaku } from "./sketch/myaku";
 import { StyleParams } from "./sketch/style-params";
 import { ShapeParams } from "./sketch/shape-params";
+import { EyeMyaku } from "./sketch/eye-myaku";
 
 window.addEventListener("load", () => {
   const elems = new Elems(document);
@@ -27,6 +28,13 @@ window.addEventListener("load", () => {
     canvas.redraw();
   };
 
+  // めだま
+  elems.eyeArc.onclick = () => {
+    const shapeParams = ShapeParams.forArc(elems.canvas.width, elems.canvas.height);
+    canvas.putOnMyaku(new EyeMyaku(shapeParams, StyleParams.createEye()));
+    canvas.redraw();
+  };
+
   // あおいの
   elems.blueArc.onclick = () => {
     const shapeParams = ShapeParams.forArc(elems.canvas.width, elems.canvas.height);
@@ -38,6 +46,13 @@ window.addEventListener("load", () => {
   elems.blueEllipse.onclick = () => {
     const shapeParams = ShapeParams.forEllipse(elems.canvas.width, elems.canvas.height);
     canvas.putOnMyaku(new Myaku(shapeParams, StyleParams.createBlue()));
+    canvas.redraw();
+  };
+
+  // めだーま
+  elems.eyeEllipse.onclick = () => {
+    const shapeParams = ShapeParams.forEllipse(elems.canvas.width, elems.canvas.height);
+    canvas.putOnMyaku(new EyeMyaku(shapeParams, StyleParams.createEye()));
     canvas.redraw();
   };
 
