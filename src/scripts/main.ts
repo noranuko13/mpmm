@@ -6,10 +6,43 @@ import { Myaku } from "./sketch/myaku";
 import { StyleParams } from "./sketch/style-params";
 import { ShapeParams } from "./sketch/shape-params";
 import { EyeMyaku } from "./sketch/eye-myaku";
+import { Coord } from "./sketch/coord";
+import { IMyaku } from "./sketch/i-myaku";
 
 window.addEventListener("load", () => {
   const elems = new Elems(document);
   const canvas = new Canvas(elems);
+
+  /**
+   * まうす
+   */
+  // ひだりくりっく
+  elems.canvas.onmousedown = (event) => {
+    canvas.releaseMyaku();
+    canvas.seekMyaku(Coord.createByMouse(event, elems.canvas), (myaku: IMyaku) => {
+      canvas.eraseMyaku(myaku);
+      canvas.putOnMyaku(myaku);
+      canvas.grabMyaku(myaku);
+    });
+    canvas.redraw();
+  };
+  // みぎくりっく
+  elems.canvas.oncontextmenu = (event) => {
+    event.preventDefault();
+    canvas.seekMyaku(Coord.createByMouse(event, elems.canvas), (myaku) => {
+      canvas.eraseMyaku(myaku);
+    });
+    canvas.redraw();
+  };
+  // すとっぷ
+  elems.canvas.onmouseup = () => canvas.releaseMyaku();
+  // はみでる
+  elems.canvas.onmouseout = () => canvas.releaseMyaku();
+  // まうすをうごかす
+  elems.canvas.onmousemove = (event: MouseEvent) => {
+    canvas.moveMyaku(Coord.createByMouse(event, elems.canvas));
+    canvas.redraw();
+  };
 
   /**
    * すぽなー
@@ -70,4 +103,21 @@ window.addEventListener("load", () => {
 
   // くりあ
   elems.clear.onclick = () => canvas.changeFabric();
+
+  /**
+   * テスト用の隠しコマンド
+   */
+  const keys: string[] = [];
+  document.onkeydown = (event: KeyboardEvent) => {
+    const COMMAND = "4b2fb724c6e49b";
+    keys.push(event.key);
+    if (keys.join("") === COMMAND) {
+      canvas.putOnMyaku(new Myaku(new ShapeParams(new Coord(50, 50), 40, 40), new StyleParams("rgb(115, 103, 7)")));
+      canvas.putOnMyaku(new Myaku(new ShapeParams(new Coord(90, 50), 40, 40), new StyleParams("rgb(34, 36, 38)")));
+      canvas.redraw();
+    }
+    if (COMMAND.length < keys.length) {
+      keys.splice(0);
+    }
+  };
 });

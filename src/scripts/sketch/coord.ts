@@ -34,6 +34,16 @@ export class Coord {
   }
 
   /**
+   * マウスイベントから座標を生成する
+   * @param event - マウスイベント
+   * @param canvas - キャンバス要素
+   * @returns 座標
+   */
+  static createByMouse(event: MouseEvent, canvas: HTMLCanvasElement): Coord {
+    return new Coord(event.pageX - canvas.offsetLeft, event.pageY - canvas.offsetTop);
+  }
+
+  /**
    * 斜辺と角度から座標を求める
    * @param hyp - 斜辺
    * @param angle - 角度
