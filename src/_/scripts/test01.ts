@@ -3,6 +3,7 @@ import { Coord } from "../../scripts/sketch/coord";
 import { Myaku } from "../../scripts/sketch/myaku";
 import { ShapeParams } from "../../scripts/sketch/shape-params";
 import { IMyaku } from "../../scripts/sketch/i-myaku";
+import { Constants } from "../../scripts/constants";
 
 /**
  * テスト01
@@ -11,6 +12,7 @@ import { IMyaku } from "../../scripts/sketch/i-myaku";
 export const test01 = (context: CanvasRenderingContext2D) => {
   drawArc(context);
   drawEllipse(context);
+  drawColored(context);
 };
 
 /**
@@ -95,5 +97,24 @@ const drawEllipse = (context: CanvasRenderingContext2D) => {
   // [50, 60]
   coord = new Coord(580, 60);
   myaku = new Myaku(new ShapeParams(coord, 50, 60), styleParams);
+  myaku.drawPath(context);
+};
+
+/**
+ * 色付きの描画
+ * @param context - キャンバス要素の2Dコンテキスト
+ */
+const drawColored = (context: CanvasRenderingContext2D) => {
+  let myaku;
+  // あかいの
+  myaku = new Myaku(new ShapeParams(new Coord(30, 120), 20, 20), StyleParams.createRed());
+  myaku.drawPath(context);
+
+  // あおいの
+  myaku = new Myaku(new ShapeParams(new Coord(80, 120), 20, 20), StyleParams.createBlue());
+  myaku.drawPath(context);
+
+  // 白目
+  myaku = new Myaku(new ShapeParams(new Coord(130, 120), 20, 20), new StyleParams(Constants.MYAKU_WHITE));
   myaku.drawPath(context);
 };
