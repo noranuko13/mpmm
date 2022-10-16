@@ -52,4 +52,7 @@ window.addEventListener("load", () => {
   // だうんろーど
   const download = new Download(elems);
   elems.download.onclick = () => download.onClick();
+
+  // くりあ
+  elems.clear.onclick = () => canvas.changeFabric();
 });

@@ -44,4 +44,8 @@ export class Elems {
   get download(): HTMLButtonElement {
     return <HTMLButtonElement>this.targetDoc.getElementById("download");
   }
+
+  get clear(): HTMLButtonElement {
+    return <HTMLButtonElement>this.targetDoc.getElementById("clear");
+  }
 }
