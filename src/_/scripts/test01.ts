@@ -4,6 +4,7 @@ import { Myaku } from "../../scripts/sketch/myaku";
 import { ShapeParams } from "../../scripts/sketch/shape-params";
 import { IMyaku } from "../../scripts/sketch/i-myaku";
 import { Constants } from "../../scripts/constants";
+import { EyeMyaku } from "../../scripts/sketch/eye-myaku";
 
 /**
  * テスト01
@@ -14,6 +15,8 @@ export const test01 = (context: CanvasRenderingContext2D) => {
   drawEllipse(context);
   drawColored(context);
   drawAngledEllipse(context);
+  drawEyeMyakuWhiteEye(context);
+  drawEyeMyakuIris(context);
 };
 
 /**
@@ -131,5 +134,35 @@ const drawAngledEllipse = (context: CanvasRenderingContext2D) => {
     const myaku = new Myaku(shapeParams, new StyleParams("rgb(0, 0, 0, 0.6)"));
     myaku.drawPath(context);
     x += 40;
+  });
+};
+
+/**
+ * めだまの体操：白目の運動
+ * @param context - キャンバス要素の2Dコンテキスト
+ */
+const drawEyeMyakuWhiteEye = (context: CanvasRenderingContext2D) => {
+  let x = 30;
+  [0, 45, 90, 135, 180, -135, -90, -45, 0].forEach((whiteAngle: number) => {
+    const shapeParams = new ShapeParams(new Coord(x, 300), 20, 20);
+    const styleParams = new StyleParams(Constants.MYAKU_RED, whiteAngle);
+    const myaku = new EyeMyaku(shapeParams, styleParams);
+    myaku.drawPath(context);
+    x += 48;
+  });
+};
+
+/**
+ * めだまの体操：虹彩の運動
+ * @param context - キャンバス要素の2Dコンテキスト
+ */
+const drawEyeMyakuIris = (context: CanvasRenderingContext2D) => {
+  let x = 30;
+  [0, 45, 90, 135, 180, -135, -90, -45, 0].forEach((irisAngle: number) => {
+    const shapeParams = new ShapeParams(new Coord(x, 340), 20, 20);
+    const styleParams = new StyleParams(Constants.MYAKU_RED, -90, irisAngle);
+    const myaku = new EyeMyaku(shapeParams, styleParams);
+    myaku.drawPath(context);
+    x += 48;
   });
 };

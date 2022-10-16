@@ -1,6 +1,6 @@
 describe("ミャクの描画", () => {
   it("画像比較テスト", () => {
-    const testKeys = ["test01"];
+    const testKeys = ["test01", "test02"];
     cy.visit("/_");
     testKeys.forEach((testKey: string) => {
       cy.get("#test").find(`#${testKey}button`).click();

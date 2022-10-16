@@ -32,4 +32,15 @@ export class Coord {
     };
     return new Coord(randomNumber(offset, maxXRange - offset), randomNumber(offset, maxYRange - offset));
   }
+
+  /**
+   * 斜辺と角度から座標を求める
+   * @param hyp - 斜辺
+   * @param angle - 角度
+   * @returns 座標
+   */
+  findByHypAngle(hyp: number, angle: number): Coord {
+    const x = (angle * Math.PI) / 180;
+    return new Coord(this.x + hyp * Math.cos(x), this.y + hyp * Math.sin(x));
+  }
 }

@@ -1,4 +1,5 @@
 import { Constants } from "../constants";
+import { Random } from "../random";
 
 /**
  * 外見パラメータ
@@ -9,8 +10,20 @@ export class StyleParams {
    */
   readonly bodyColor: string;
 
-  constructor(bodyColor = "rgb(0, 0, 0)") {
+  /**
+   * 白目の角度
+   */
+  readonly whiteAngle: number;
+
+  /**
+   * 虹彩の角度
+   */
+  readonly irisAngle: number;
+
+  constructor(bodyColor = "rgb(0, 0, 0)", whiteAngle = 0, irisAngle = 0) {
     this.bodyColor = bodyColor;
+    this.whiteAngle = whiteAngle;
+    this.irisAngle = irisAngle;
   }
 
   /**
@@ -28,5 +41,13 @@ export class StyleParams {
    */
   static createBlue() {
     return new StyleParams(Constants.MYAKU_BLUE);
+  }
+
+  /**
+   * ミャクミャク様の目玉
+   * @returns 外見パラメータ
+   */
+  static createEye() {
+    return new StyleParams(Constants.MYAKU_RED, Random.whiteAngle, Random.irisAngle);
   }
 }
