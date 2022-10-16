@@ -17,6 +17,9 @@ export const test01 = (context: CanvasRenderingContext2D) => {
   drawAngledEllipse(context);
   drawEyeMyakuWhiteEye(context);
   drawEyeMyakuIris(context);
+  drawArcCollisionDetection(context);
+  drawEllipseAcuteCollisionDetection(context);
+  drawEllipseObtuseCollisionDetection(context);
 };
 
 /**
@@ -165,4 +168,170 @@ const drawEyeMyakuIris = (context: CanvasRenderingContext2D) => {
     myaku.drawPath(context);
     x += 48;
   });
+};
+
+/**
+ * 円の当たり判定
+ * @param context - キャンバス要素の2Dコンテキスト
+ */
+const drawArcCollisionDetection = (context: CanvasRenderingContext2D) => {
+  const coord = new Coord(530, 170);
+  const styleParams = new StyleParams("rgb(0, 0, 0, 0.2)");
+  const myaku = new Myaku(new ShapeParams(coord, 40, 40, 0), styleParams);
+  myaku.drawPath(context);
+  // prettier-ignore
+  [
+    [- 43,    0],
+    [   0, - 43],
+    [   0, + 43],
+    [+ 43,    0],
+
+    [- 30, - 30],
+    [+ 30, - 30],
+    [- 30, + 30],
+    [+ 30, + 30],
+  ].forEach((xy: number[]) => {
+    const dotCoord = new Coord(coord.x + xy[0], coord.y + xy[1]);
+    drawCoord(dotCoord, "red", context);
+    inRange(dotCoord, myaku);
+  });
+  // prettier-ignore
+  [
+    [- 44,    0],
+    [   0, - 44],
+    [   0, + 44],
+    [+ 44,    0],
+
+    [- 31, - 31],
+    [+ 31, - 31],
+    [- 31, + 31],
+    [+ 31, + 31],
+  ].forEach((xy: number[]) => {
+    const dotCoord = new Coord(coord.x + xy[0], coord.y + xy[1]);
+    drawCoord(dotCoord, "blue", context);
+    outOfRange(dotCoord, myaku);
+  });
+};
+
+/**
+ * 鋭角の楕円の当たり判定
+ * @param context - キャンバス要素の2Dコンテキスト
+ */
+const drawEllipseAcuteCollisionDetection = (context: CanvasRenderingContext2D) => {
+  const coord = new Coord(580, 250);
+  const styleParams = new StyleParams("rgb(0, 0, 0, 0.2)");
+  const myaku = new Myaku(new ShapeParams(coord, 30, 60, 45), styleParams);
+  myaku.drawPath(context);
+  // prettier-ignore
+  [
+    [+ 41,    0],
+    [- 41,    0],
+    [   0, - 41],
+    [   0, + 41],
+
+    [- 23, - 23],
+    [+ 46, - 46],
+    [- 46, + 46],
+    [+ 23, + 23],
+  ].forEach((xy: number[]) => {
+    const dotCoord = new Coord(coord.x + xy[0], coord.y + xy[1]);
+    drawCoord(dotCoord, "deeppink", context);
+    inRange(dotCoord, myaku);
+  });
+  // prettier-ignore
+  [
+    [+ 42,    0],
+    [- 42,    0],
+    [   0, - 42],
+    [   0, + 42],
+
+    [- 24, - 24],
+    [+ 47, - 47],
+    [- 47, + 47],
+    [+ 24, + 24],
+  ].forEach((xy: number[]) => {
+    const dotCoord = new Coord(coord.x + xy[0], coord.y + xy[1]);
+    drawCoord(dotCoord, "cyan", context);
+    outOfRange(dotCoord, myaku);
+  });
+};
+
+/**
+ * 鈍角の楕円の当たり判定
+ * @param context - キャンバス要素の2Dコンテキスト
+ */
+const drawEllipseObtuseCollisionDetection = (context: CanvasRenderingContext2D) => {
+  const coord = new Coord(480, 320);
+  const styleParams = new StyleParams("rgb(0, 0, 0, 0.2)");
+  const myaku = new Myaku(new ShapeParams(coord, 20, 30, 165), styleParams);
+  myaku.drawPath(context);
+  // prettier-ignore
+  [
+    [+ 22,    0],
+    [- 22,    0],
+    [   0, - 31],
+    [   0, + 31],
+
+    [- 20, - 20],
+    [+ 16, - 17],
+    [- 16, + 17],
+    [+ 20, + 20],
+  ].forEach((xy: number[]) => {
+    const dotCoord = new Coord(coord.x + xy[0], coord.y + xy[1]);
+    drawCoord(dotCoord, "darkorange", context);
+    inRange(dotCoord, myaku);
+  });
+  // prettier-ignore
+  [
+    [+ 23,    0],
+    [- 23,    0],
+    [   0, - 32],
+    [   0, + 32],
+
+    [- 20, - 21],
+    [+ 16, - 18],
+    [- 16, + 18],
+    [+ 20, + 21],
+  ].forEach((xy: number[]) => {
+    const dotCoord = new Coord(coord.x + xy[0], coord.y + xy[1]);
+    drawCoord(dotCoord, "green", context);
+    outOfRange(dotCoord, myaku);
+  });
+};
+
+/**
+ * 座標を描画する
+ * @param coord - 座標
+ * @param strokeStyle - 描画色
+ * @param context - キャンバス要素の2Dコンテキスト
+ */
+const drawCoord = (coord: Coord, strokeStyle: string, context: CanvasRenderingContext2D) => {
+  context.beginPath();
+  context.strokeStyle = strokeStyle;
+  context.arc(coord.x, coord.y, 0.6, 0, Math.PI * 2, true);
+  context.fillStyle = strokeStyle;
+  context.fill();
+  context.stroke();
+};
+
+/**
+ * ミャクが範囲外の場合は例外とする
+ * @param coord - 座標
+ * @param myaku - ミャク
+ */
+const inRange = (coord: Coord, myaku: IMyaku) => {
+  if (!myaku.inRange(coord)) {
+    throw new Error("Coord out of range");
+  }
+};
+
+/**
+ * ミャクが範囲内の場合は例外とする
+ * @param coord - 座標
+ * @param myaku - ミャク
+ */
+const outOfRange = (coord: Coord, myaku: IMyaku) => {
+  if (myaku.inRange(coord)) {
+    throw new Error("Coord in range");
+  }
 };
