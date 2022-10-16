@@ -4,6 +4,8 @@
   "name": "mpmm",
   "description": "Mass Production Myaku-Myaku",
   "scripts": {
+    "serve:dev": "node scripts/serve.mjs",
+    "serve:prod": "node scripts/serve.mjs",
     "build": "node scripts/build.mjs"
   },
   "devDependencies": {
