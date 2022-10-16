@@ -15,6 +15,41 @@
     <link href="scss/main.scss" rel="stylesheet" />
   </head>
   <body>
+    <div class="wrapper">
+      <div id="sketch" class="sketch">
+        <canvas id="canvas" class="sketch-canvas"></canvas>
+      </div>
+      <div id="spawner" class="spawner">
+        <button id="redArc" class="button button-red">あかいの</button>
+        <button id="blueArc" class="button button-blue">あおいの</button>
+        <button id="eyeArc" class="button button-eye">めだま</button>
+        <button id="redEllipse" class="button button-red">あかーいの</button>
+        <button id="blueEllipse" class="button button-blue">あおーいの</button>
+        <button id="eyeEllipse" class="button button-eye">めだーま</button>
+      </div>
+      <div id="config" class="config">
+        <label for="size">おおきさ</label>
+        <select id="size" class="select">
+          <option value="100%x60%">100%x60%</option>
+        </select>
+        <button id="download" class="button button-black">だうんろーど</button>
+        <button id="clear" class="button button-black">くりあ</button>
+      </div>
+      <div class="copyright">
+        <p class="copyright-note">
+          『量産型 ミャクミャク様（りょうさんがた みゃくみゃくさま）』は、大阪・関西万博の公式キャラクター『ミャクミャク』の二次創作物です。
+          ガイドラインを確認の上、用法用量を守って正しくお使いください。
+        </p>
+        <ul class="copyright-ref">
+          <li>
+            <a href="https://www.expo2025.or.jp/overview/character/" target="_blank">公式キャラクターについて | 公益社団法人2025年日本国際博覧会協会</a>
+          </li>
+          <li>
+            <a href="https://github.com/noranuko13/mpmm" target="_blank">noranuko13/mpmm | GitHub</a>
+          </li>
+        </ul>
+      </div>
+    </div>
     <script src="scripts/main.ts" type="module" charset="UTF-8"></script>
   </body>
 </html>

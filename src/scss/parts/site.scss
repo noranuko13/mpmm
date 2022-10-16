@@ -1,0 +1,50 @@
+@charset "utf-8";
+
+.sketch {
+  line-height: 0;
+
+  .sketch-canvas {
+    cursor: pointer;
+    border: $canvas-border-width solid $expo-black;
+  }
+}
+
+.spawner,
+.config {
+  display: grid;
+  gap: $gap-1;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.config {
+  label {
+    @include hide-content;
+  }
+}
+
+.copyright {
+  border-top: 1px solid $expo-black;
+  padding-top: $gap-2;
+  line-height: 1.3;
+  font-size: 0.8rem;
+
+  .copyright-note {
+    margin-bottom: $gap-1;
+  }
+
+  .copyright-ref {
+    text-align: right;
+
+    a {
+      color: $ref-link;
+
+      &:hover {
+        text-decoration: underline;
+      }
+
+      &:visited {
+        color: $ref-visited;
+      }
+    }
+  }
+}

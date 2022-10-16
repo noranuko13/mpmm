@@ -1,0 +1,37 @@
+@charset "utf-8";
+
+body {
+  height: 100vh;
+}
+
+.wrapper {
+  margin: 0 auto;
+  max-width: $canvas-max-width + $canvas-border-width * 2;
+  display: grid;
+  row-gap: $gap-2;
+}
+
+.button,
+.select {
+  width: 100%;
+  border: 1px solid gray;
+  border-radius: $gap-2;
+  padding: 0.6em 0 0.4em;
+  font-weight: bold;
+  text-align: center;
+
+  &:hover {
+    opacity: 0.6;
+  }
+}
+
+@each $key,
+  $color
+    in (red: $myaku-red, blue: $myaku-blue, eye: $myaku-eye, black: $expo-black)
+{
+  .button-#{"" + $key} {
+    color: $color;
+    border-color: $color;
+    background: rgb($color, 20%);
+  }
+}
