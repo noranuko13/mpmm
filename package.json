@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "name": "mpmm",
   "description": "Mass Production Myaku-Myaku",
+  "scripts": {
+    "build": "node scripts/build.mjs"
+  },
   "devDependencies": {
     "autoprefixer": "^10.4.12",
     "cssnano": "^5.1.13",
