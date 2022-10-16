@@ -17,6 +17,10 @@ export class Elems {
     return <HTMLCanvasElement>this.targetDoc.getElementById("canvas");
   }
 
+  get context(): CanvasRenderingContext2D {
+    return <CanvasRenderingContext2D>this.canvas.getContext("2d");
+  }
+
   get size(): HTMLSelectElement {
     return <HTMLSelectElement>this.targetDoc.getElementById("size");
   }
