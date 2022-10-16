@@ -35,6 +35,11 @@ export class Constants {
   ];
 
   /**
+   * ミャクの角度
+   */
+  static BODY_ANGLES = [0, 15, 30, 45, 60, 75, 90, 105, 120, 135, 150, 165];
+
+  /**
    * ミャクミャク様の赤
    */
   static MYAKU_RED = "rgb(229, 0, 18)";

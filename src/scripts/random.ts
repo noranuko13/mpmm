@@ -21,6 +21,14 @@ export class Random {
   }
 
   /**
+   * ミャクの角度をランダムに取得する
+   * @returns ミャクの角度 15, 30, 45 etc...
+   */
+  static get bodyAngle() {
+    return this.randomFromArray(Constants.BODY_ANGLES);
+  }
+
+  /**
    * 配列から唯一つの要素をランダムに取得する
    * @param items - 対象要素の配列
    * @returns うち一つの要素

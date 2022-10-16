@@ -13,6 +13,7 @@ export const test01 = (context: CanvasRenderingContext2D) => {
   drawArc(context);
   drawEllipse(context);
   drawColored(context);
+  drawAngledEllipse(context);
 };
 
 /**
@@ -117,4 +118,18 @@ const drawColored = (context: CanvasRenderingContext2D) => {
   // 白目
   myaku = new Myaku(new ShapeParams(new Coord(130, 120), 20, 20), new StyleParams(Constants.MYAKU_WHITE));
   myaku.drawPath(context);
+};
+
+/**
+ * 角度の付いた楕円の描画
+ * @param context - キャンバス要素の2Dコンテキスト
+ */
+const drawAngledEllipse = (context: CanvasRenderingContext2D) => {
+  let x = 20;
+  [0, 15, 30, 45, 60, 75, 90, 105, 120, 135, 150, 165, 180].forEach((bodyAngle: number) => {
+    const shapeParams = new ShapeParams(new Coord(x, 260), 10, 20, bodyAngle);
+    const myaku = new Myaku(shapeParams, new StyleParams("rgb(0, 0, 0, 0.6)"));
+    myaku.drawPath(context);
+    x += 40;
+  });
 };

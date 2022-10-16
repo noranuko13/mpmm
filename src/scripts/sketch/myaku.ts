@@ -22,7 +22,7 @@ export class Myaku implements IMyaku {
       this.shapeParams.coord.y,
       this.shapeParams.radiusX,
       this.shapeParams.radiusY,
-      0,
+      this.shapeParams.bodyRadian,
       0,
       Math.PI * 2
     );
