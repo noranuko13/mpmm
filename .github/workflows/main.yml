@@ -1,0 +1,32 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+    paths-ignore: ["**.md"]
+  pull_request:
+    branches: [main]
+    paths-ignore: ["**.md"]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: "16.18.0"
+          cache: "npm"
+      - run: npm ci
+      - run: npm run style:ci
+      - uses: cypress-io/github-action@v4
+        with:
+          browser: chrome
+          start: npm run serve
+          wait-on: "http://localhost:1234"
+      - run: npm run build
+      - uses: JamesIves/github-pages-deploy-action@4.4.1
+        with:
+          branch: gh-pages
+          folder: dist
