@@ -17,4 +17,10 @@ export interface IMyaku {
    * @returns 範囲内ならtrue,範囲外ならfalse
    */
   inRange(coord: Coord): boolean;
+
+  /**
+   * ミャクを指定の座標に移動させる
+   * @param coord - 移動する座標
+   */
+  movePosition(coord: Coord): void;
 }

@@ -55,4 +55,8 @@ export class Myaku implements IMyaku {
       Math.pow(rotatedPointY, 2) / Math.pow(this.shapeParams.radiusY, 2);
     return result <= Constants.MYAKU_SENSITIVITY;
   }
+
+  movePosition(coord: Coord) {
+    this.shapeParams.coord = coord;
+  }
 }

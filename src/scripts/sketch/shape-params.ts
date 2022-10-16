@@ -8,7 +8,7 @@ export class ShapeParams {
   /**
    * 座標
    */
-  readonly coord: Coord;
+  public coord: Coord;
 
   /**
    * X半径
