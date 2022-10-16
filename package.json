@@ -2,5 +2,15 @@
   "private": true,
   "version": "0.1.0",
   "name": "mpmm",
-  "description": "Mass Production Myaku-Myaku"
+  "description": "Mass Production Myaku-Myaku",
+  "devDependencies": {
+    "autoprefixer": "^10.4.12",
+    "cssnano": "^5.1.13",
+    "html-minifier": "^4.0.0",
+    "live-server": "^1.2.2",
+    "postcss": "^8.4.17",
+    "prettier": "2.7.1",
+    "terser": "^5.15.0",
+    "tiny-glob": "^0.2.9"
+  }
 }
