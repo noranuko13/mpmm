@@ -5,13 +5,18 @@
   "description": "Mass Production Myaku-Myaku",
   "scripts": {
     "style:fix": "prettier --write . && eslint . --fix && stylelint **/*.scss --fix",
-    "style:ci": "prettier --check . && eslint . && stylelint **/*.scss"
+    "style:ci": "prettier --check . && eslint . && stylelint **/*.scss",
+    "serve": "rimraf dist && parcel src/index.html",
+    "build": "rimraf dist && parcel build src/index.html --no-source-maps --public-url /mpmm"
   },
   "devDependencies": {
+    "@parcel/transformer-sass": "^2.7.0",
     "@typescript-eslint/eslint-plugin": "^5.39.0",
     "eslint": "^8.25.0",
     "eslint-config-prettier": "^8.5.0",
+    "parcel": "^2.7.0",
     "prettier": "2.7.1",
+    "rimraf": "^3.0.2",
     "stylelint": "^14.13.0",
     "stylelint-config-prettier-scss": "^0.0.1",
     "stylelint-config-standard-scss": "^5.0.0"
