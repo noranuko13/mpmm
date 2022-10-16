@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>量産型 ミャクミャク様（りょうさんがた みゃくみゃくさま）</title>
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/destyle.css@3.0.2/destyle.min.css" integrity="sha256-8QFM3IxG2ZXjVQ6/Uv1+FQGODrSwxcH7irvz+OabgUo=" rel="stylesheet" />
+    <link href="index.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="ahead">
+        <div id="sketch">
+          <canvas class="sketch-canvas" height="360" id="canvas" width="640"></canvas>
+        </div>
+      </div>
+      <div class="ahead">
+        <div id="spawner">
+          <div class="abreast">
+            <button class="button button-red" id="redArc">あかいの</button>
+            <button class="button button-blue" id="blueArc">あおいの</button>
+            <button class="button button-eye" id="eyeArc">めだま</button>
+          </div>
+          <div class="abreast">
+            <button class="button button-red" id="redEllipse">あかーいの</button>
+            <button class="button button-blue" id="blueEllipse">あおーいの</button>
+            <button class="button button-eye" id="eyeEllipse">めだーま</button>
+          </div>
+        </div>
+      </div>
+      <div class="ahead">
+        <div id="config">
+          <div class="abreast">
+            <label for="size">おおきさ</label>
+            <select class="select" id="size"></select>
+            <button class="button button-gray" id="download">だうんろーど</button>
+            <button class="button button-gray" id="clear">くりあ</button>
+          </div>
+        </div>
+      </div>
+      <div class="ahead">
+        <div class="copyright" id="copyright">
+          <p class="copyright-note">
+            『量産型 ミャクミャク様（りょうさんがた みゃくみゃくさま）』は、大阪・関西万博の公式キャラクター『ミャクミャク』の二次創作物です。
+            ガイドラインを確認の上、用法用量を守って正しくお使いください。
+          </p>
+          <ul class="copyright-ref">
+            <li>
+              <a href="https://www.expo2025.or.jp/overview/character/" target="_blank"> 公式キャラクターについて | 公益社団法人2025年日本国際博覧会協会 </a>
+            </li>
+            <li>
+              <a href="https://github.com/noranuko13/mpmm" target="_blank">noranuko13/mpmm | GitHub</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <script src="scripts/core.js" type="text/javascript"></script>
+    <script src="scripts/dom.js" type="text/javascript"></script>
+    <script src="scripts/sketch.js" type="text/javascript"></script>
+    <script src="scripts/myakus.js" type="text/javascript"></script>
+    <script charset="UTF-8" src="index.js" type="text/javascript"></script>
+  </body>
+</html>
