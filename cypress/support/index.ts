@@ -10,5 +10,11 @@ declare namespace Cypress {
      * @param heightPx - キャンバスの高さ
      */
     assertCanvasSize(widthPx: number, heightPx: number): Chainable<Element>;
+
+    /**
+     * ダウンロードしたファイルの存在確認
+     * @param filename - ファイル名
+     */
+    assertDownloadFileExists(filename: string): Chainable<Element>;
   }
 }

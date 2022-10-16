@@ -20,4 +20,8 @@ export class Elems {
   get size(): HTMLSelectElement {
     return <HTMLSelectElement>this.targetDoc.getElementById("size");
   }
+
+  get download(): HTMLButtonElement {
+    return <HTMLButtonElement>this.targetDoc.getElementById("download");
+  }
 }
