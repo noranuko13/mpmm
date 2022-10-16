@@ -3,6 +3,7 @@
     "target": "es2022",
     "baseUrl": "./",
     "types": ["node", "cypress"],
+    "moduleResolution": "node",
     "forceConsistentCasingInFileNames": true,
     "esModuleInterop": true,
     "strict": true

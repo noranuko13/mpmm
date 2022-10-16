@@ -1,8 +1,8 @@
-import { StyleParams } from "../../scripts/sketch/style-params";
-import { Coord } from "../../scripts/sketch/coord";
-import { ShapeParams } from "../../scripts/sketch/shape-params";
-import { EyeMyaku } from "../../scripts/sketch/eye-myaku";
-import { IMyaku } from "../../scripts/sketch/i-myaku";
+import { StyleParams } from "../../../scripts/sketch/style-params";
+import { Coord } from "../../../scripts/sketch/coord";
+import { ShapeParams } from "../../../scripts/sketch/shape-params";
+import { EyeMyaku } from "../../../scripts/sketch/eye-myaku";
+import { IMyaku } from "../../../scripts/sketch/i-myaku";
 
 /**
  * テスト02

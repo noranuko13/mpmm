@@ -1,7 +1,5 @@
-import { execute } from "./tools";
-import { test01 } from "./test01";
-import { test02 } from "./test02";
-import { test03 } from "./test03";
+import { execute } from "./execute";
+import { test01, test02, test03 } from "./tests";
 
 window.addEventListener("load", function () {
   execute(test01);

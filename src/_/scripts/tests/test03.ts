@@ -1,7 +1,7 @@
-import { StyleParams } from "../../scripts/sketch/style-params";
-import { Coord } from "../../scripts/sketch/coord";
-import { ShapeParams } from "../../scripts/sketch/shape-params";
-import { Myaku } from "../../scripts/sketch/myaku";
+import { StyleParams } from "../../../scripts/sketch/style-params";
+import { Coord } from "../../../scripts/sketch/coord";
+import { ShapeParams } from "../../../scripts/sketch/shape-params";
+import { Myaku } from "../../../scripts/sketch/myaku";
 
 /**
  * テスト03
