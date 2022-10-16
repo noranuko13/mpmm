@@ -21,6 +21,22 @@ export class Elems {
     return <CanvasRenderingContext2D>this.canvas.getContext("2d");
   }
 
+  get redArc(): HTMLButtonElement {
+    return <HTMLButtonElement>this.targetDoc.getElementById("redArc");
+  }
+
+  get redEllipse(): HTMLButtonElement {
+    return <HTMLButtonElement>this.targetDoc.getElementById("redEllipse");
+  }
+
+  get blueArc(): HTMLButtonElement {
+    return <HTMLButtonElement>this.targetDoc.getElementById("blueArc");
+  }
+
+  get blueEllipse(): HTMLButtonElement {
+    return <HTMLButtonElement>this.targetDoc.getElementById("blueEllipse");
+  }
+
   get size(): HTMLSelectElement {
     return <HTMLSelectElement>this.targetDoc.getElementById("size");
   }
