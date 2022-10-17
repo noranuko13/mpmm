@@ -25,6 +25,7 @@ jobs:
           browser: chrome
           start: npm run serve
           wait-on: "http://localhost:1234"
+          command-prefix: "--"
       - run: npm run build
       - uses: JamesIves/github-pages-deploy-action@v4
         with:
