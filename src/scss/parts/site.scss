@@ -5,6 +5,7 @@
 
   .sketch-canvas {
     cursor: pointer;
+    touch-action: pinch-zoom;
     border: $canvas-border-width solid $expo-black;
   }
 }
