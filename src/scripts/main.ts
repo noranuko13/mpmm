@@ -17,7 +17,7 @@ window.addEventListener("load", () => {
    * まうす
    */
   // ひだりくりっく
-  elems.canvas.onmousedown = (event) => {
+  elems.canvas.onpointerdown = (event: PointerEvent) => {
     canvas.releaseMyaku();
     canvas.seekMyaku(Coord.createByMouse(event, elems.canvas), (myaku: IMyaku) => {
       canvas.eraseMyaku(myaku);
@@ -27,7 +27,7 @@ window.addEventListener("load", () => {
     canvas.redraw();
   };
   // みぎくりっく
-  elems.canvas.oncontextmenu = (event) => {
+  elems.canvas.oncontextmenu = (event: MouseEvent) => {
     event.preventDefault();
     canvas.seekMyaku(Coord.createByMouse(event, elems.canvas), (myaku) => {
       canvas.eraseMyaku(myaku);
@@ -35,11 +35,11 @@ window.addEventListener("load", () => {
     canvas.redraw();
   };
   // すとっぷ
-  elems.canvas.onmouseup = () => canvas.releaseMyaku();
+  elems.canvas.onpointerup = () => canvas.releaseMyaku();
   // はみでる
-  elems.canvas.onmouseout = () => canvas.releaseMyaku();
+  elems.canvas.onpointerout = () => canvas.releaseMyaku();
   // まうすをうごかす
-  elems.canvas.onmousemove = (event: MouseEvent) => {
+  elems.canvas.onpointermove = (event: PointerEvent) => {
     canvas.moveMyaku(Coord.createByMouse(event, elems.canvas));
     canvas.redraw();
   };
