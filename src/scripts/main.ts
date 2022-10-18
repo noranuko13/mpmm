@@ -95,7 +95,10 @@ window.addEventListener("load", () => {
   // おおきさ
   const size = new Size(elems);
   size.setOptions();
-  elems.size.onchange = (event: Event) => size.onChange(event);
+  elems.size.onchange = (event: Event) => {
+    size.onChange(event);
+    canvas.redraw();
+  };
 
   // だうんろーど
   const download = new Download(elems);
