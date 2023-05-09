@@ -28,5 +28,8 @@
     "stylelint": "^14.14.0",
     "stylelint-config-prettier-scss": "^0.0.1",
     "stylelint-config-standard-scss": "^5.0.0"
+  },
+  "engines": {
+    "node": "18.14.2"
   }
 }
