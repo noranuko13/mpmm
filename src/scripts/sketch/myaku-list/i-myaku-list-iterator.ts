@@ -1,7 +1,7 @@
 /**
  * ミャクイテレータのインターフェイス
  */
-import { IMyaku } from "./i-myaku";
+import { IMyaku } from "../i-myaku";
 
 export interface IMyakuListIterator {
   /**

@@ -1,6 +1,6 @@
 import { MyakuListFifoIterator } from "./myaku-list-fifo-iterator";
 import { LifoMyakuListIterator } from "./myaku-list-lifo-iterator";
-import { IMyaku } from "./i-myaku";
+import { IMyaku } from "../i-myaku";
 
 /**
  * ミャクのコレクションオブジェクト
