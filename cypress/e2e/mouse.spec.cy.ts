@@ -7,10 +7,9 @@ describe("マウスイベント", () => {
 
   it("ミャクを掴んで移動できること", () => {
     cy.clock(new Date("2025-10-13T00:01:01"));
-    cy.get("#canvas")
-      .trigger("pointerdown", 40, 50)
-      .trigger("pointermove", 130, 100)
-      .trigger("pointerup", { force: true });
+    cy.get("#canvas").trigger("pointerdown", 40, 50);
+    cy.get("#canvas").trigger("pointermove", 130, 100);
+    cy.get("#canvas").trigger("pointerup", { force: true });
     cy.get("#download").click();
     const arg = { testKey: "myaku-myaku_20251013-000101" };
     cy.task("comparePng", arg).then((diff) => {
@@ -30,12 +29,11 @@ describe("マウスイベント", () => {
 
   it("キャンバスの描画領域外にはみ出さないこと", () => {
     cy.clock(new Date("2025-10-13T00:03:01"));
-    cy.get("body")
-      .trigger("pointerdown", 360, 50)
-      .trigger("pointermove", 360, 350)
-      .trigger("pointerout", 360, 350) // 擬似再現
-      .trigger("pointermove", 360, 400)
-      .trigger("pointerup", 360, 400);
+    cy.get("body").trigger("pointerdown", 360, 50);
+    cy.get("body").trigger("pointermove", 360, 350);
+    cy.get("body").trigger("pointerout", 360, 350); // 擬似再現
+    cy.get("body").trigger("pointermove", 360, 400);
+    cy.get("body").trigger("pointerup", 360, 400);
     cy.get("#download").click();
     const arg = { testKey: "myaku-myaku_20251013-000301" };
     cy.task("comparePng", arg).then((diff) => {
