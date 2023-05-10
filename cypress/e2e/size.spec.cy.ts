@@ -1,5 +1,5 @@
 describe("設定おおきさ", () => {
-  before(() => {
+  beforeEach(() => {
     cy.visit("/");
   });
 
