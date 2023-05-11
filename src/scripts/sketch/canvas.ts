@@ -1,4 +1,4 @@
-import { MyakuList } from "./myaku-list/myaku-list";
+import { MyakuList } from "./myaku-list";
 import { Elems } from "../elems";
 import { IMyaku } from "./myaku";
 import { Coord } from "./coord";
