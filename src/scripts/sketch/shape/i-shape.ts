@@ -1,9 +1,9 @@
 import { Coord } from "../coord";
 
 /**
- * ミャクのインターフェイス
+ * 図形のインターフェイス
  */
-export interface IMyaku {
+export interface IShape {
   /**
    * パスを描く
    * @param context - キャンバス要素の2Dコンテキスト
@@ -11,16 +11,10 @@ export interface IMyaku {
   drawPath(context: CanvasRenderingContext2D): void;
 
   /**
-   * 座標がミャクの範囲内かを判定する
+   * 座標が図形の範囲内かを判定する
    * @see Constants.SHAPE_SENSITIVITY
    * @param coord - 判定する座標
    * @returns 範囲内ならtrue,範囲外ならfalse
    */
   inRange(coord: Coord): boolean;
-
-  /**
-   * ミャクを指定の座標に移動させる
-   * @param coord - 移動する座標
-   */
-  movePosition(coord: Coord): void;
 }

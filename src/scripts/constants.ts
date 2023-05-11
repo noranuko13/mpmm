@@ -9,9 +9,9 @@ export class Constants {
   static SKEB_OFFSET = 25;
 
   /**
-   * ミャク選択時の感度
+   * 図形選択時の感度
    */
-  static MYAKU_SENSITIVITY = 1.2;
+  static SHAPE_SENSITIVITY = 1.2;
 
   /**
    * まるいミャクの大きさ

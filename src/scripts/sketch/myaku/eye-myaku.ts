@@ -1,16 +1,28 @@
-import { Myaku } from "./myaku";
 import { ShapeParams } from "../shape-params";
 import { StyleParams } from "../style-params";
 import { Constants } from "../../constants";
+import { IMyaku } from "./i-myaku";
+import { EllipseShape, IShape } from "../shape";
+import { Coord } from "../coord";
 
 /**
  * 目玉の楕円
  * ミャクミャク様の目玉
  */
-export class EyeMyaku extends Myaku {
+export class EyeMyaku implements IMyaku {
+  protected shapeParams: ShapeParams;
+  protected styleParams: StyleParams;
+  protected baseShape: IShape;
+
+  constructor(shapeParams: ShapeParams, styleParams: StyleParams) {
+    this.shapeParams = shapeParams;
+    this.styleParams = styleParams;
+    this.baseShape = new EllipseShape(this.shapeParams, this.styleParams);
+  }
+
   drawPath(context: CanvasRenderingContext2D) {
     // 身体
-    super.drawPath(context);
+    this.baseShape.drawPath(context);
 
     const unitX = this.shapeParams.radiusX / 50;
     const unitY = this.shapeParams.radiusY / 50;
@@ -19,7 +31,7 @@ export class EyeMyaku extends Myaku {
     // 白目
     const whiteCoord = this.shapeParams.coord.findByHypAngle(unitX * 18, this.styleParams.whiteAngle);
     const whiteXy = unitEye * 24;
-    const whiteArc = new Myaku(
+    const whiteArc = new EllipseShape(
       new ShapeParams(whiteCoord, whiteXy, whiteXy, 0),
       new StyleParams(Constants.MYAKU_WHITE)
     );
@@ -28,7 +40,15 @@ export class EyeMyaku extends Myaku {
     // 虹彩
     const irisCoord = whiteCoord.findByHypAngle(unitEye * 10, this.styleParams.irisAngle);
     const irisXy = unitEye * 10;
-    const iris = new Myaku(new ShapeParams(irisCoord, irisXy, irisXy, 0), StyleParams.createBlue());
-    iris.drawPath(context);
+    const irisArc = new EllipseShape(new ShapeParams(irisCoord, irisXy, irisXy, 0), StyleParams.createBlue());
+    irisArc.drawPath(context);
+  }
+
+  inRange(coord: Coord) {
+    return this.baseShape.inRange(coord);
+  }
+
+  movePosition(coord: Coord) {
+    this.shapeParams.coord = coord;
   }
 }
