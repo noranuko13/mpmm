@@ -1,5 +1,5 @@
-import { MyakuListFifoIterator } from "./myaku-list-fifo-iterator";
-import { LifoMyakuListIterator } from "./myaku-list-lifo-iterator";
+import { FifoMyakuListIterator } from "./fifo-myaku-list-iterator";
+import { LifoMyakuListIterator } from "./lifo-myaku-list-iterator";
 import { IMyaku } from "../myaku";
 
 /**
@@ -62,8 +62,8 @@ export class MyakuList {
    * FIFOイテレーターを取得する
    * @returns FIFOイテレーター
    */
-  fifoIterator(): MyakuListFifoIterator {
-    return new MyakuListFifoIterator(this);
+  fifoIterator(): FifoMyakuListIterator {
+    return new FifoMyakuListIterator(this);
   }
 
   /**

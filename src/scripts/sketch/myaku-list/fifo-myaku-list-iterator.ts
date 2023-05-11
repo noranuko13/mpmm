@@ -6,7 +6,7 @@ import { IMyaku } from "../myaku";
  * 先入れ先出しイテレータ
  * 描画するときの判定は、先に格納したミャクから
  */
-export class MyakuListFifoIterator implements IMyakuListIterator {
+export class FifoMyakuListIterator implements IMyakuListIterator {
   /**
    * ミャクのコレクションオブジェクト
    */
