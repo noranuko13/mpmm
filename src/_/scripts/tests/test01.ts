@@ -1,10 +1,8 @@
 import { StyleParams } from "../../../scripts/sketch/style-params";
 import { Coord } from "../../../scripts/sketch/coord";
-import { Myaku } from "../../../scripts/sketch/myaku";
+import { EyeMyaku, IMyaku, Myaku } from "../../../scripts/sketch/myaku";
 import { ShapeParams } from "../../../scripts/sketch/shape-params";
-import { IMyaku } from "../../../scripts/sketch/i-myaku";
 import { Constants } from "../../../scripts/constants";
-import { EyeMyaku } from "../../../scripts/sketch/eye-myaku";
 
 /**
  * テスト01

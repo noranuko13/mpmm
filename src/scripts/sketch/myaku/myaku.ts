@@ -1,8 +1,8 @@
-import { ShapeParams } from "./shape-params";
-import { StyleParams } from "./style-params";
+import { ShapeParams } from "../shape-params";
+import { StyleParams } from "../style-params";
 import { IMyaku } from "./i-myaku";
-import { Constants } from "../constants";
-import { Coord } from "./coord";
+import { Constants } from "../../constants";
+import { Coord } from "../coord";
 
 /**
  * ミャク

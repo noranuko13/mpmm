@@ -2,12 +2,10 @@ import { Size } from "./config/size";
 import { Elems } from "./elems";
 import { Download } from "./config/download";
 import { Canvas } from "./sketch/canvas";
-import { Myaku } from "./sketch/myaku";
+import { EyeMyaku, IMyaku, Myaku } from "./sketch/myaku";
 import { StyleParams } from "./sketch/style-params";
 import { ShapeParams } from "./sketch/shape-params";
-import { EyeMyaku } from "./sketch/eye-myaku";
 import { Coord } from "./sketch/coord";
-import { IMyaku } from "./sketch/i-myaku";
 
 window.addEventListener("load", () => {
   const elems = new Elems(document);

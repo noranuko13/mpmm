@@ -1,6 +1,6 @@
 import { MyakuList } from "./myaku-list";
 import { IMyakuListIterator } from "./i-myaku-list-iterator";
-import { IMyaku } from "../i-myaku";
+import { IMyaku } from "../myaku";
 
 /**
  * 後入れ先出しイテレータ

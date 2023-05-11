@@ -1,7 +1,7 @@
 import { Myaku } from "./myaku";
-import { ShapeParams } from "./shape-params";
-import { StyleParams } from "./style-params";
-import { Constants } from "../constants";
+import { ShapeParams } from "../shape-params";
+import { StyleParams } from "../style-params";
+import { Constants } from "../../constants";
 
 /**
  * 目玉の楕円
