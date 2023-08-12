@@ -26,7 +26,7 @@ export class EllipseShape implements IShape {
       this.shapeParams.radiusY,
       this.shapeParams.bodyRadian,
       0,
-      Math.PI * 2
+      Math.PI * 2,
     );
     context.fillStyle = this.styleParams.bodyColor;
     context.fill();

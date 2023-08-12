@@ -33,7 +33,7 @@ export class EyeMyaku implements IMyaku {
     const whiteXy = unitEye * 24;
     const whiteArc = new EllipseShape(
       new ShapeParams(whiteCoord, whiteXy, whiteXy, 0),
-      new StyleParams(Constants.MYAKU_WHITE)
+      new StyleParams(Constants.MYAKU_WHITE),
     );
     whiteArc.drawPath(context);
 
