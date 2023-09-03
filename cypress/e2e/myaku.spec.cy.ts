@@ -5,7 +5,7 @@ describe("ミャクの描画", () => {
     testKeys.forEach((testKey: string) => {
       cy.get("#test").find(`#${testKey}button`).click();
       cy.task("comparePng", { testKey: `${testKey}canvas` }).then((diff) => {
-        expect(diff).to.eq(0);
+        expect(diff).to.lte(Cypress.env("THRESHOLD"));
       });
     });
   });

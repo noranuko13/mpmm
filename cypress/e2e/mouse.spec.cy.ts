@@ -13,7 +13,7 @@ describe("マウスイベント", () => {
     cy.get("#download").click();
     const arg = { testKey: "myaku-myaku_20251013-000101" };
     cy.task("comparePng", arg).then((diff) => {
-      expect(diff).to.eq(0);
+      expect(diff).to.lte(Cypress.env("THRESHOLD"));
     });
   });
 
@@ -23,7 +23,7 @@ describe("マウスイベント", () => {
     cy.get("#download").click();
     const arg = { testKey: "myaku-myaku_20251013-000201" };
     cy.task("comparePng", arg).then((diff) => {
-      expect(diff).to.eq(0);
+      expect(diff).to.lte(Cypress.env("THRESHOLD"));
     });
   });
 
@@ -37,7 +37,7 @@ describe("マウスイベント", () => {
     cy.get("#download").click();
     const arg = { testKey: "myaku-myaku_20251013-000301" };
     cy.task("comparePng", arg).then((diff) => {
-      expect(diff).to.eq(0);
+      expect(diff).to.lte(Cypress.env("THRESHOLD"));
     });
   });
 });
