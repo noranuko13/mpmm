@@ -19,5 +19,6 @@ export default defineConfig({
       on("task", tasks);
       return config;
     },
+    experimentalRunAllSpecs: true,
   },
 });
