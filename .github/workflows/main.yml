@@ -20,7 +20,7 @@ jobs:
           cache: "npm"
       - run: npm ci
       - run: npm run style:ci
-      - uses: cypress-io/github-action@v5
+      - uses: cypress-io/github-action@v6
         with:
           browser: chrome
           record: false
