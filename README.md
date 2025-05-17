@@ -1,5 +1,8 @@
 # Mass Production Myaku-Myaku
 
+> [!WARNING]
+> This repository is archived. No further updates will be made.
+
 ## Licence
 
 - Source code
