@@ -30,7 +30,7 @@
     "stylelint-config-standard-scss": "^13.0.0"
   },
   "engines": {
-    "node": "v22.14.0",
-    "npm": "10.9.2"
+    "node": "v22.15.1",
+    "npm": "11.3.0"
   }
 }
