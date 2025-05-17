@@ -1,7 +1,7 @@
 @charset "utf-8";
 
-@import "variables";
-@import "mixin";
+@use "variables";
+@use "mixin";
 
-@import "parts/base";
-@import "parts/site";
+@use "parts/base";
+@use "parts/site";

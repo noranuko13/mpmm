@@ -1,3 +1,5 @@
+@use "../variables";
+
 @charset "utf-8";
 
 body {
@@ -10,16 +12,16 @@ body {
 
 .wrapper {
   margin: 0 auto;
-  max-width: $canvas-max-width + $canvas-border-width * 2;
+  max-width: variables.$canvas-max-width + variables.$canvas-border-width * 2;
   display: grid;
-  row-gap: $gap-2;
+  row-gap: variables.$gap-2;
 }
 
 .button,
 .select {
   width: 100%;
   border: 1px solid gray;
-  border-radius: $gap-2;
+  border-radius: variables.$gap-2;
   padding: 0.6em 0 0.4em;
   font-weight: bold;
   text-align: center;
@@ -31,7 +33,12 @@ body {
 
 @each $key,
   $color
-    in (red: $myaku-red, blue: $myaku-blue, eye: $myaku-eye, black: $expo-black)
+    in (
+      red: variables.$myaku-red,
+      blue: variables.$myaku-blue,
+      eye: variables.$myaku-eye,
+      black: variables.$expo-black
+    )
 {
   .button-#{"" + $key} {
     color: $color;
