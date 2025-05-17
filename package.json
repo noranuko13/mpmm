@@ -16,18 +16,18 @@
     "@types/pixelmatch": "^5.2.6",
     "@types/pngjs": "^6.0.5",
     "@typescript-eslint/eslint-plugin": "^7.18.0",
-    "cypress": "^13.17.0",
+    "cypress": "^14.3.3",
     "eslint": "^8.57.1",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-cypress": "^2.15.2",
     "parcel": "^2.15.1",
-    "pixelmatch": "^5.3.0",
+    "pixelmatch": "^7.1.0",
     "pngjs": "^7.0.0",
     "prettier": "3.5.3",
-    "rimraf": "^5.0.10",
+    "rimraf": "^6.0.1",
     "stylelint": "^16.19.1",
     "stylelint-config-prettier-scss": "^1.0.0",
-    "stylelint-config-standard-scss": "^13.1.0"
+    "stylelint-config-standard-scss": "^15.0.0"
   },
   "engines": {
     "node": "v22.15.1",
